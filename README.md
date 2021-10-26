@@ -5,6 +5,7 @@
   - private_5g
 - /dev/sda5 is swap
 - /dev/sda6 is root partition
+- pacific timezone
 
 # setting up network
 
@@ -47,3 +48,25 @@ swapon /dev/sda5
 genfstab -L /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
+
+# timezone
+```
+ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+hwclock --systohc
+```
+
+# localization
+edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`
+```
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+```
+
+# hostname
+```
+echo "golf" > /etc/hostname
+```
+
+# set password
+`passwd`
+
