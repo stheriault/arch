@@ -124,3 +124,9 @@ add this to file
 ExecStart=
 ExecStart=-/usr/bin/agetty -a steven --noclear %I $TERM
 ```
+
+# alacritty
+pacman -S alacritty
+
+# chromium
+pacman -S chromium
