@@ -23,21 +23,27 @@
 `timedatectl set-ntp true`
 
 # partitions
-`fdisk -l`
+```
+fdisk -l
+```
 _partition disks_
 
 # format
-`mkft.ext4 /dev/sda6`
-`mkswap /dev/sda5`
+```
+mkft.ext4 /dev/sda6
+mkswap /dev/sda5
+```
 
 # mount
-`mount /dev/sda6 /mnt`
-`swapon /dev/sda5`
-
+```
+mount /dev/sda6 /mnt
+swapon /dev/sda5
+```
 # install
 `pacstrap /mnt base linux linux-firmware vim wpa_supplicant wireless_tools networkmanager`
 
 # configure
-`genfstab -L /mnt >> /mnt/etc/fstab`
-`arch-chroot /mnt`
-
+```
+genfstab -L /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+```
