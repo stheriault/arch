@@ -90,3 +90,37 @@ exit
 reboot
 ```
 
+# networking
+```
+systemctl enable NetworkManager.service
+systemctl disable dhcpcd.service
+systemctl enable wpa_supplicant.service
+systemctl start NetworkManager.service
+nmcli device wifi list
+nmcli device wifi connect private_5g password #####
+```
+
+# user
+```
+pacman -S sudo
+useradd -m -G wheel,storage,power steven
+passwd steven
+EDITOR=vim visudo
+```
+uncomment %wheel ALL=(ALL) ALL
+
+# xorg, awesome
+```
+pacman -S xf86-video-intel xorg xorg-server awesome xorg-xinit
+```
+
+# auto login
+```
+systemctl edit getty\@tty1.service
+```
+add this to file
+```
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty -a steven --noclear %I $TERM
+```
