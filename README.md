@@ -39,9 +39,12 @@ mkswap /dev/sda5
 ```
 mount /dev/sda6 /mnt
 swapon /dev/sda5
+mkdir /boot/efi
+mount /dev/sda1 /mnt/boot/efi
 ```
+
 # install
-`pacstrap /mnt base linux linux-firmware vim wpa_supplicant wireless_tools networkmanager`
+`pacstrap /mnt base linux linux-firmware vim wpa_supplicant wireless_tools networkmanager intel-ucode`
 
 # configure
 ```
@@ -62,11 +65,28 @@ locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
-# hostname
+# networking
 ```
 echo "golf" > /etc/hostname
+echo "127.0.0.1 localhost" >  /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+echo "127.0.0.1 golf"      >> /etc/hosts
 ```
 
 # set password
 `passwd`
+
+# bootloader
+```
+pacman -S grub efibootmgr os-prober
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+# reboot
+```
+exit
+reboot
+```
 
