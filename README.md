@@ -109,9 +109,9 @@ EDITOR=vim visudo
 ```
 uncomment %wheel ALL=(ALL) ALL
 
-# xorg, awesome
+# xorg, awesome, sound
 ```
-pacman -S xf86-video-intel xorg xorg-server awesome xorg-xinit
+pacman -S xf86-video-intel xorg xorg-server awesome xorg-xinit pavucontrol pulseaudio pulseaudio-alsa
 ```
 
 # auto login
