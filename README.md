@@ -109,9 +109,10 @@ EDITOR=vim visudo
 ```
 uncomment %wheel ALL=(ALL) ALL
 
-# xorg, awesome, sound
+# xorg, awesome, sound, time
 ```
 pacman -S xf86-video-intel xorg xorg-server awesome xorg-xinit pavucontrol pulseaudio pulseaudio-alsa
+systemctl enable systemd-timesyncd.service
 ```
 
 # auto login
