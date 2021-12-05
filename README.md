@@ -146,3 +146,10 @@ go to github.com/stheriault and add key
 
 # install stow
 pacman -S stow
+
+# clone my dotfiles
+```
+git clone git@github.com:stheriault/.dotfiles.git
+cd .dotfiles
+./install
+```
