@@ -81,6 +81,11 @@ echo "127.0.0.1 golf"      >> /etc/hosts
 pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+```
+modify the timeout to 1 second
+
+```
+vim /boot/grub/grub.cfg
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
