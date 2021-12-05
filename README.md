@@ -131,8 +131,18 @@ ExecStart=
 ExecStart=-/usr/bin/agetty -a steven --noclear %I $TERM
 ```
 
-# alacritty
-pacman -S alacritty
+# alacritty & zsh
+pacman -S alacritty zsh
 
 # chromium
 pacman -S chromium
+
+# Set up github ssh key
+```
+ssh-keygen -t ed25519 -C "stheriault@gmail.com"
+cat .ssh/id_ed25519.pub
+```
+go to github.com/stheriault and add key
+
+# install stow
+pacman -S stow
