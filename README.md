@@ -131,11 +131,8 @@ ExecStart=
 ExecStart=-/usr/bin/agetty -a steven --noclear %I $TERM
 ```
 
-# alacritty & zsh
-pacman -S alacritty zsh
-
-# chromium
-pacman -S chromium
+# install my core utils
+pacman -S alacritty zsh stow chromium
 
 # Set up github ssh key
 ```
@@ -144,12 +141,10 @@ cat .ssh/id_ed25519.pub
 ```
 go to github.com/stheriault and add key
 
-# install stow
-pacman -S stow
-
 # clone my dotfiles
 ```
 git clone git@github.com:stheriault/.dotfiles.git
 cd .dotfiles
 ./install
 ```
+
