@@ -132,7 +132,7 @@ ExecStart=-/usr/bin/agetty -a steven --noclear %I $TERM
 ```
 
 # install my core utils
-pacman -S alacritty zsh stow chromium cmake make gcc pkgconfig ripgrep
+pacman -S alacritty zsh stow chromium cmake make gcc pkgconfig ripgrep udisk2 ntfs-3g
 
 # Set up github ssh key
 ```
